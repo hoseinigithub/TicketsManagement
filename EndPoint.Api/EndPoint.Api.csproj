@@ -19,4 +19,8 @@
     <ProjectReference Include="..\TicketsManagement.Infrastructure\TicketsManagement.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="pic\" />
+  </ItemGroup>
+
 </Project>
