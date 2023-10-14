@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TicketsManagement.Application.Interfaces;
 using TicketsManagement.Domain.Entities;
 
 namespace TicketsManagement.Infrastructure.Contexts
 {
-    public class AppDbContext : DbContext, IAppDbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {

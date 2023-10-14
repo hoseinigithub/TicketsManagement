@@ -18,7 +18,7 @@ namespace EndPoint.Api.Controllers
         [HttpPost]
         public IActionResult Create([FromForm] CreateMovieDto model)
         {
-            string path = Path.Combine(@"J:\Hoseini\MyProjects\TicketsManagementApi\EndPoint.Api\pic", model.ImageFile.FileName);
+            string path = Path.Combine(@"F:\Programming\MyProjects\TicketsManagement\EndPoint.Api\pic", model.ImageFile.FileName);
             using (Stream stream = new FileStream(path, FileMode.Create))
             {
                 model.ImageFile.CopyTo(stream);

@@ -1,6 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using TicketsManagement.Application.Interfaces;
-using TicketsManagement.Application.Services.Movies.Commands;
 using TicketsManagement.Infrastructure.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,8 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("sql")));
-builder.Services.AddScoped<IAppDbContext, AppDbContext>();
-builder.Services.AddScoped<ICreateMovieService, CreateMovieService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
