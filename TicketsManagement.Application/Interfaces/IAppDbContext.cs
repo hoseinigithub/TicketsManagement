@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TicketsManagement.Application.Interfaces;
 using TicketsManagement.Domain.Entities;
 
-namespace TicketsManagement.Infrastructure.Contexts
+namespace TicketsManagement.Application.Interfaces
 {
-    public class AppDbContext : DbContext, IAppDbContext
+    public interface IAppDbContext
     {
-        public AppDbContext(DbContextOptions options) : base(options)
-        {
-        }
-
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Actor_Movie> Actor_Movies { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Producer> Producers { get; set; }
+
+        int SaveChanges(bool acceptAllChangesOnSuccess);
+
+        int SaveChanges();
+
+        Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = new CancellationToken());
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());
     }
 }

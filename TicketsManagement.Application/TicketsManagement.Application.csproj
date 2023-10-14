@@ -11,7 +11,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TicketsManagement.Common\TicketsManagement.Common.csproj" />
     <ProjectReference Include="..\TicketsManagement.Domain\TicketsManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Actors\Commands\DeleteActor\" />
+    <Folder Include="Services\Actors\Commands\UpdateActor\" />
+    <Folder Include="Services\Actors\Queries\GetActors\" />
+    <Folder Include="Services\Actors\Queries\GetByIdActor\" />
+    <Folder Include="Services\Cinemas\Commands\" />
+    <Folder Include="Services\Cinemas\Queries\" />
+    <Folder Include="Services\Movies\Commands\" />
+    <Folder Include="Services\Movies\Queries\" />
+    <Folder Include="Services\Producers\Commands\" />
+    <Folder Include="Services\Producers\Queries\" />
   </ItemGroup>
 
 </Project>
